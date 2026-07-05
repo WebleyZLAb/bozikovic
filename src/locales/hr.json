@@ -1,0 +1,93 @@
+{
+  "hero": {
+    "subtitle": "Sv. Martin, Podstrana — 10 metara od mora"
+  },
+  "nav": {
+    "studio": "Studio"
+  },
+  "common": {
+    "persons": "osobe",
+    "from": "od",
+    "per_night": "/noć"
+  },
+  "features": {
+    "sea": "10 m od mora",
+    "parking": "Besplatan parking",
+    "wifi": "Klima + WiFi",
+    "sunbeds": "Ležaljke uključene",
+    "split": "15 min od Splita"
+  },
+  "apartments": {
+    "title": "Smještajne jedinice",
+    "studio": {
+      "name": "Studio",
+      "floor": "Kat",
+      "price_from": "od €60/noć"
+    },
+    "a3": {
+      "name": "Apartman A3",
+      "floor": "Prizemlje",
+      "price_from": "od €80/noć"
+    },
+    "a4": {
+      "name": "Apartman A4+2",
+      "floor": "Kat",
+      "price_from": "od €100/noć"
+    }
+  },
+  "amenities": {
+    "ac": "Klima",
+    "wifi": "WiFi",
+    "tv": "TV",
+    "kitchen": "Kuhinja",
+    "bathroom": "Kupatilo",
+    "balcony": "Balkon",
+    "terrace_beach": "Terasa uz plažu",
+    "terrace_view": "Natkrivena terasa s pogledom",
+    "two_bedrooms": "Dvije spavaće sobe"
+  },
+  "cta": {
+    "inquiry": "Pošalji upit",
+    "inquiry_studio": "Pozdrav!%20Zanima%20me%20Studio%20apartman%20(2%20osobe).%20Mo%C5%BEete%20li%20mi%20re%C4%87i%20je%20li%20slobodan%20u%20terminu%3A%20...",
+    "inquiry_a3": "Pozdrav!%20Zanima%20me%20Apartman%20A3%20(3%20osobe).%20Mo%C5%BEete%20li%20mi%20re%C4%87i%20je%20li%20slobodan%20u%20terminu%3A%20...",
+    "inquiry_a4": "Pozdrav!%20Zanima%20me%20Apartman%20A4%2B2%20(do%206%20osoba).%20Mo%C5%BEete%20li%20mi%20re%C4%87i%20je%20li%20slobodan%20u%20terminu%3A%20..."
+  },
+  "reviews": {
+    "title": "Gosti se vraćaju",
+    "reviews": "recenzija",
+    "r1": {
+      "text": "\"Savršen odmor za obitelj. Plaža doslovno ispred vrata, djeca su bila oduševljena. Apartman je čist, uređen i ima sve što treba. Definitivno se vraćamo!\"",
+      "author": "— Maja K., Sarajevo"
+    },
+    "r2": {
+      "text": "\"Direkt am Meer, ruhige Lage, sehr freundliche Gastgeber. Die Terrasse mit Meerblick war jeden Abend ein Genuss. Sehr empfehlenswert!\"",
+      "author": "— Thomas B., München"
+    },
+    "r3": {
+      "text": "\"Wspaniałe miejsce tuż przy plaży. Apartament duży, czysty, z pięknym widokiem na morze. Ante i Irena to wspaniali gospodarze, zawsze pomocni.\"",
+      "author": "— Katarzyna W., Kraków"
+    },
+    "r4": {
+      "text": "\"Lokacija je nenadmašna — more doslovno na dohvat ruke. Domaćini su ljubazni i uvijek dostupni. Ovo je mjesto koje ćemo preporučiti svim prijateljima.\"",
+      "author": "— Nikola P., Beograd"
+    }
+  },
+  "location": {
+    "title": "Lokacija",
+    "beach": "Plaža",
+    "shop": "Trgovina",
+    "restaurant": "Restoran",
+    "split": "Split",
+    "airport": "Aerodrom Split",
+    "excursions": "Iz Podstrane lako se stižete na izlete brodom do Brača, Hvara i Šolte. U blizini su i jahanje konja te planina Perun za planinske šetnje."
+  },
+  "contact": {
+    "title": "Rezervirajte svoj boravak",
+    "subtitle": "Kontaktirajte nas direktno i dogovorite uvjete bez posrednika.",
+    "call": "Pozovite",
+    "email_label": "E-mail upit",
+    "hosts": "Domaćini:",
+    "checkin": "Check-in od 14:00",
+    "checkout": "check-out do 10:00"
+  }
+}

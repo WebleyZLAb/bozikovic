@@ -1,0 +1,582 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Apartmani Božiković — Podstrana | Smještaj uz more</title>
+  <meta name="description" content="Privatni apartmani u Podstrani, 10 metara od mora. Studio, A3 i A4+2 uz plažu. Direktan kontakt, bez provizija." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://apartmanibozikovic.com/" />
+
+  <!-- OG Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apartmanibozikovic.com/" />
+  <meta property="og:title" content="Apartmani Božiković — Podstrana | Smještaj uz more" />
+  <meta property="og:description" content="Privatni apartmani u Podstrani, 10 metara od mora. Studio, A3 i A4+2 uz plažu." />
+  <meta property="og:image" content="/images/hero-desktop.webp" />
+  <meta property="og:locale" content="hr_HR" />
+  <meta property="og:locale:alternate" content="en_GB" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/images/hero-desktop.webp" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/src/css/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Apartmani Božiković",
+    "description": "Privatni apartmani uz more u Podstrani blizu Splita",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sv. Martin 94",
+      "addressLocality": "Podstrana",
+      "addressRegion": "Splitsko-dalmatinska županija",
+      "postalCode": "21312",
+      "addressCountry": "HR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "43.4835",
+      "longitude": "16.5478"
+    },
+    "telephone": "+385955739367",
+    "url": "https://apartmanibozikovic.com/",
+    "image": "https://apartmanibozikovic.com/images/hero-desktop.webp",
+    "priceRange": "€€",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Logo (fixed top-left) -->
+  <a class="logo-fixed" href="#hero" aria-label="Apartmani Božiković — početna">
+    <img src="/images/logo.webp" alt="Apartmani Božiković logo" />
+  </a>
+
+  <!-- Language Toggle (fixed) -->
+  <div class="lang-toggle" id="langToggle" aria-label="Language selector">
+    <button class="lang-btn active" data-lang="hr" aria-pressed="true">HR</button>
+    <span class="lang-divider">|</span>
+    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         SEKCIJA 1: HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Naslovna">
+      <div class="hero__image-wrap" id="heroImageWrap">
+        <picture>
+          <source media="(max-width: 767px)" srcset="/images/hero-mobile.webp" />
+          <img
+            src="/images/hero-desktop.webp"
+            alt="Apartmani Božiković — pogled na fasadu kuće uz more, Podstrana"
+            class="hero__img"
+            id="heroImg"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero__overlay"></div>
+
+        <!-- Intro video: plays once on load, then reveals the interactive hero above -->
+        <div class="hero__video-wrap" id="heroVideoWrap">
+          <video
+            id="heroVideo"
+            class="hero__video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            poster="/images/hero-desktop.webp"
+          >
+            <source src="/hero-video/hero-video-mobile.webm" media="(max-width: 767px)" type="video/webm" />
+            <source src="/hero-video/hero-video-desktop.webm" type="video/webm" />
+          </video>
+        </div>
+
+        <!-- Hotspot: Studio -->
+        <div
+          class="hotspot"
+          id="hotspot-studio"
+          data-target="#studio"
+          data-apartment="studio"
+          style="left: 22%; top: 35%"
+          role="button"
+          tabindex="0"
+          aria-label="Studio apartman"
+        >
+          <div class="hotspot__dot"></div>
+          <span class="hotspot__label" data-i18n="nav.studio">Studio</span>
+          <div class="hotspot__tooltip" aria-hidden="true">
+            <strong data-i18n="apartments.studio.name">Studio</strong>
+            <span>30 m² · 2 <span data-i18n="common.persons">osobe</span></span>
+            <span data-i18n="apartments.studio.price_from">od €60/noć</span>
+          </div>
+        </div>
+
+        <!-- Hotspot: Apartman A4+2 -->
+        <div
+          class="hotspot"
+          id="hotspot-a4"
+          data-target="#apartman-a4"
+          data-apartment="a4"
+          style="left: 68%; top: 30%"
+          role="button"
+          tabindex="0"
+          aria-label="Apartman A4+2"
+        >
+          <div class="hotspot__dot"></div>
+          <span class="hotspot__label">A4+2</span>
+          <div class="hotspot__tooltip" aria-hidden="true">
+            <strong data-i18n="apartments.a4.name">Apartman A4+2</strong>
+            <span>120 m² · 4+2 <span data-i18n="common.persons">osobe</span></span>
+            <span data-i18n="apartments.a4.price_from">od €100/noć</span>
+          </div>
+        </div>
+
+        <!-- Hotspot: Apartman A3 -->
+        <div
+          class="hotspot"
+          id="hotspot-a3"
+          data-target="#apartman-a3"
+          data-apartment="a3"
+          style="left: 25%; top: 65%"
+          role="button"
+          tabindex="0"
+          aria-label="Apartman A3"
+        >
+          <div class="hotspot__dot"></div>
+          <span class="hotspot__label">A3</span>
+          <div class="hotspot__tooltip" aria-hidden="true">
+            <strong data-i18n="apartments.a3.name">Apartman A3</strong>
+            <span>50 m² · 3 <span data-i18n="common.persons">osobe</span></span>
+            <span data-i18n="apartments.a3.price_from">od €80/noć</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="hero__title">Apartmani Božiković</h1>
+        <p class="hero__subtitle">
+          <span data-i18n="hero.subtitle">Sv. Martin, Podstrana — 10 metara od mora</span>
+        </p>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SEKCIJA 2: INTRO TRAKA
+    ══════════════════════════════════════════ -->
+    <section class="features" id="features" aria-label="Istaknute prednosti">
+      <div class="container">
+        <ul class="features__list">
+          <li class="features__item">
+            <span class="features__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 20 Q7 12 14 16 Q21 20 26 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M2 24 Q7 16 14 20 Q21 24 26 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+              </svg>
+            </span>
+            <span data-i18n="features.sea">10 m od mora</span>
+          </li>
+          <li class="features__item">
+            <span class="features__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 8V6a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2"/>
+                <text x="14" y="19" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor" font-family="Inter, sans-serif">P</text>
+              </svg>
+            </span>
+            <span data-i18n="features.parking">Besplatan parking</span>
+          </li>
+          <li class="features__item">
+            <span class="features__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 10 Q14 2 24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 14 Q14 8 21 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 18 Q14 14 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="14" cy="21" r="2" fill="currentColor"/>
+              </svg>
+            </span>
+            <span data-i18n="features.wifi">Klima + WiFi</span>
+          </li>
+          <li class="features__item">
+            <span class="features__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 18 L6 12 L10 14 L14 10 L18 14 L22 12 L24 18 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                <line x1="4" y1="22" x2="24" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="8" y1="18" x2="8" y2="22" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="20" y1="18" x2="20" y2="22" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span data-i18n="features.sunbeds">Ležaljke uključene</span>
+          </li>
+          <li class="features__item">
+            <span class="features__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/>
+                <polyline points="14 8 14 14 18 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span data-i18n="features.split">15 min od Splita</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SEKCIJA 3: APARTMANI
+    ══════════════════════════════════════════ -->
+    <section class="apartments" id="apartments" aria-label="Apartmani">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="apartments.title">Smještajne jedinice</h2>
+
+        <!-- STUDIO -->
+        <article class="apartment-card reveal" id="studio">
+          <div class="apartment-card__header">
+            <div class="apartment-card__badge" data-i18n="apartments.studio.floor">Kat</div>
+            <h3 class="apartment-card__title" data-i18n="apartments.studio.name">Studio</h3>
+            <p class="apartment-card__meta">30 m² · 2 <span data-i18n="common.persons">osobe</span></p>
+          </div>
+
+          <div class="apartment-card__gallery" data-apartment="studio">
+            <div class="gallery-track" id="gallery-studio">
+              <div class="gallery-item placeholder" data-label="Studio — dnevni boravak"></div>
+              <div class="gallery-item placeholder" data-label="Studio — kuhinja"></div>
+              <div class="gallery-item placeholder" data-label="Studio — balkon"></div>
+              <div class="gallery-item placeholder" data-label="Studio — kupatilo"></div>
+            </div>
+          </div>
+
+          <div class="apartment-card__body">
+            <ul class="amenities">
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></span> <span data-i18n="amenities.ac">Klima</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span> <span data-i18n="amenities.wifi">WiFi</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> <span data-i18n="amenities.tv">TV</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="21" y1="15" x2="21" y2="22"/><path d="M21 2a6 6 0 0 0-6 6v3h3"/><line x1="15" y1="2" x2="15" y2="8"/></svg></span> <span data-i18n="amenities.kitchen">Kuhinja</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span> <span data-i18n="amenities.bathroom">Kupatilo</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="5" y1="21" x2="5" y2="8"/><line x1="19" y1="21" x2="19" y2="8"/><line x1="5" y1="8" x2="19" y2="8"/><line x1="10" y1="21" x2="10" y2="8"/><line x1="15" y1="21" x2="15" y2="8"/></svg></span> <span data-i18n="amenities.balcony">Balkon</span></li>
+            </ul>
+            <div class="apartment-card__price">
+              <span class="price-from" data-i18n="common.from">od</span>
+              <span class="price-amount">€60</span>
+              <span class="price-unit" data-i18n="common.per_night">/noć</span>
+            </div>
+          </div>
+
+          <div class="apartment-card__cta">
+            <a
+              class="btn btn--primary btn--wa"
+              href="#"
+              data-wa-apartment="studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pošalji upit za Studio apartman putem WhatsAppa"
+            >
+              <svg class="btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" fill="currentColor"/></svg>
+              <span data-i18n="cta.inquiry">Pošalji upit</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APARTMAN A3 -->
+        <article class="apartment-card reveal" id="apartman-a3">
+          <div class="apartment-card__header">
+            <div class="apartment-card__badge" data-i18n="apartments.a3.floor">Prizemlje</div>
+            <h3 class="apartment-card__title" data-i18n="apartments.a3.name">Apartman A3</h3>
+            <p class="apartment-card__meta">50 m² · 3 <span data-i18n="common.persons">osobe</span></p>
+          </div>
+
+          <div class="apartment-card__gallery" data-apartment="a3">
+            <div class="gallery-track" id="gallery-a3">
+              <div class="gallery-item placeholder" data-label="A3 — dnevni boravak"></div>
+              <div class="gallery-item placeholder" data-label="A3 — terasa uz plažu"></div>
+              <div class="gallery-item placeholder" data-label="A3 — spavaća soba"></div>
+              <div class="gallery-item placeholder" data-label="A3 — kuhinja"></div>
+            </div>
+          </div>
+
+          <div class="apartment-card__body">
+            <ul class="amenities">
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></span> <span data-i18n="amenities.ac">Klima</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span> <span data-i18n="amenities.wifi">WiFi</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> <span data-i18n="amenities.tv">TV</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="21" y1="15" x2="21" y2="22"/><path d="M21 2a6 6 0 0 0-6 6v3h3"/><line x1="15" y1="2" x2="15" y2="8"/></svg></span> <span data-i18n="amenities.kitchen">Kuhinja</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span> <span data-i18n="amenities.bathroom">Kupatilo</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"/></svg></span> <span data-i18n="amenities.terrace_beach">Terasa uz plažu</span></li>
+            </ul>
+            <div class="apartment-card__price">
+              <span class="price-from" data-i18n="common.from">od</span>
+              <span class="price-amount">€80</span>
+              <span class="price-unit" data-i18n="common.per_night">/noć</span>
+            </div>
+          </div>
+
+          <div class="apartment-card__cta">
+            <a
+              class="btn btn--primary btn--wa"
+              href="#"
+              data-wa-apartment="a3"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pošalji upit za Apartman A3 putem WhatsAppa"
+            >
+              <svg class="btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" fill="currentColor"/></svg>
+              <span data-i18n="cta.inquiry">Pošalji upit</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APARTMAN A4+2 -->
+        <article class="apartment-card reveal" id="apartman-a4">
+          <div class="apartment-card__header">
+            <div class="apartment-card__badge" data-i18n="apartments.a4.floor">Kat</div>
+            <h3 class="apartment-card__title" data-i18n="apartments.a4.name">Apartman A4+2</h3>
+            <p class="apartment-card__meta">120 m² · 4+2 <span data-i18n="common.persons">osobe</span></p>
+          </div>
+
+          <div class="apartment-card__gallery" data-apartment="a4">
+            <div class="gallery-track" id="gallery-a4">
+              <div class="gallery-item placeholder" data-label="A4+2 — dnevni boravak"></div>
+              <div class="gallery-item placeholder" data-label="A4+2 — terasa s pogledom"></div>
+              <div class="gallery-item placeholder" data-label="A4+2 — spavaća soba 1"></div>
+              <div class="gallery-item placeholder" data-label="A4+2 — spavaća soba 2"></div>
+              <div class="gallery-item placeholder" data-label="A4+2 — kuhinja"></div>
+            </div>
+          </div>
+
+          <div class="apartment-card__body">
+            <ul class="amenities">
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></span> <span data-i18n="amenities.ac">Klima</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span> <span data-i18n="amenities.wifi">WiFi</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> <span data-i18n="amenities.tv">TV</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="21" y1="15" x2="21" y2="22"/><path d="M21 2a6 6 0 0 0-6 6v3h3"/><line x1="15" y1="2" x2="15" y2="8"/></svg></span> <span data-i18n="amenities.kitchen">Kuhinja</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span> <span data-i18n="amenities.bathroom">Kupatilo</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/><line x1="23" y1="22" x2="1" y2="22"/><polyline points="8 6 12 2 16 6"/></svg></span> <span data-i18n="amenities.terrace_view">Natkrivena terasa s pogledom</span></li>
+              <li><span class="amenity-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></span> <span data-i18n="amenities.two_bedrooms">Dvije spavaće sobe</span></li>
+            </ul>
+            <div class="apartment-card__price">
+              <span class="price-from" data-i18n="common.from">od</span>
+              <span class="price-amount">€100</span>
+              <span class="price-unit" data-i18n="common.per_night">/noć</span>
+            </div>
+          </div>
+
+          <div class="apartment-card__cta">
+            <a
+              class="btn btn--primary btn--wa"
+              href="#"
+              data-wa-apartment="a4"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pošalji upit za Apartman A4+2 putem WhatsAppa"
+            >
+              <svg class="btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" fill="currentColor"/></svg>
+              <span data-i18n="cta.inquiry">Pošalji upit</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SEKCIJA 4: RECENZIJE
+    ══════════════════════════════════════════ -->
+    <section class="reviews" id="reviews" aria-label="Recenzije gostiju">
+      <div class="container">
+        <div class="reviews__header reveal">
+          <h2 class="section-title" data-i18n="reviews.title">Gosti se vraćaju</h2>
+          <div class="reviews__badge">
+            <span class="badge__stars" aria-label="5 od 5 zvjezdica">★★★★★</span>
+            <span class="badge__text">5/5 · 13 <span data-i18n="reviews.reviews">recenzija</span></span>
+          </div>
+        </div>
+
+        <div class="reviews__grid">
+          <blockquote class="review-card reveal">
+            <p class="review-card__text" data-i18n="reviews.r1.text">"Savršen odmor za obitelj. Plaža doslovno ispred vrata, djeca su bila oduševljena. Apartman je čist, uređen i ima sve što treba. Definitivno se vraćamo!"</p>
+            <footer class="review-card__footer">
+              <cite class="review-card__author" data-i18n="reviews.r1.author">— Maja K., Sarajevo</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card reveal">
+            <p class="review-card__text" data-i18n="reviews.r2.text">"Direkt am Meer, ruhige Lage, sehr freundliche Gastgeber. Die Terrasse mit Meerblick war jeden Abend ein Genuss. Sehr empfehlenswert!"</p>
+            <footer class="review-card__footer">
+              <cite class="review-card__author" data-i18n="reviews.r2.author">— Thomas B., München</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card reveal">
+            <p class="review-card__text" data-i18n="reviews.r3.text">"Wspaniałe miejsce tuż przy plaży. Apartament duży, czysty, z pięknym widokiem na morze. Ante i Irena to wspaniali gospodarze, zawsze pomocni."</p>
+            <footer class="review-card__footer">
+              <cite class="review-card__author" data-i18n="reviews.r3.author">— Katarzyna W., Kraków</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card reveal">
+            <p class="review-card__text" data-i18n="reviews.r4.text">"Lokacija je nenadmašna — more doslovno na dohvat ruke. Domaćini su ljubazni i uvijek dostupni. Ovo je mjesto koje ćemo preporučiti svim prijateljima."</p>
+            <footer class="review-card__footer">
+              <cite class="review-card__author" data-i18n="reviews.r4.author">— Nikola P., Beograd</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SEKCIJA 5: LOKACIJA
+    ══════════════════════════════════════════ -->
+    <section class="location" id="location" aria-label="Lokacija">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="location.title">Lokacija</h2>
+
+        <div class="location__grid">
+          <div class="location__map reveal" id="map" role="application" aria-label="Interaktivna karta lokacije"></div>
+
+          <div class="location__info reveal">
+            <ul class="distance-list">
+              <li>
+                <span class="distance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12 Q5 8 8 12 Q11 16 14 12 Q17 8 22 12"/><path d="M2 17 Q5 13 8 17 Q11 21 14 17 Q17 13 22 17"/></svg></span>
+                <span data-i18n="location.beach">Plaža</span>
+                <span class="distance-value">10 m</span>
+              </li>
+              <li>
+                <span class="distance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 L3 6 v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+                <span data-i18n="location.shop">Trgovina</span>
+                <span class="distance-value">200 m</span>
+              </li>
+              <li>
+                <span class="distance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="21" y1="15" x2="21" y2="22"/><path d="M21 2a6 6 0 0 0-6 6v3h3"/><line x1="15" y1="2" x2="15" y2="8"/></svg></span>
+                <span data-i18n="location.restaurant">Restoran</span>
+                <span class="distance-value">100 m</span>
+              </li>
+              <li>
+                <span class="distance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="20"/><line x1="3" y1="23" x2="21" y2="23"/><rect x="7" y="7" width="3" height="3"/><rect x="14" y="7" width="3" height="3"/><rect x="7" y="13" width="3" height="3"/><rect x="14" y="13" width="3" height="3"/><rect x="9" y="17" width="6" height="6"/></svg></span>
+                <span data-i18n="location.split">Split</span>
+                <span class="distance-value">15 min</span>
+              </li>
+              <li>
+                <span class="distance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 L16 11 l3.5-3.5C21 6 21 4 19 4s-2 1-3.5 2.5L11 8 2.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+                <span data-i18n="location.airport">Aerodrom Split</span>
+                <span class="distance-value">~30 km</span>
+              </li>
+            </ul>
+
+            <p class="location__text" data-i18n="location.excursions">
+              Iz Podstrane lako se stižete na izlete brodom do Brača, Hvara i Šolte. U blizini su i jahanje konja te planina Perun za planinske šetnje.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SEKCIJA 6: KONTAKT / FOOTER
+    ══════════════════════════════════════════ -->
+    <section class="contact" id="contact" aria-label="Kontakt i rezervacija">
+      <div class="container">
+        <h2 class="contact__title reveal" data-i18n="contact.title">Rezervirajte svoj boravak</h2>
+        <p class="contact__subtitle reveal" data-i18n="contact.subtitle">Kontaktirajte nas direktno i dogovorite uvjete bez posrednika.</p>
+
+        <div class="contact__ctas reveal">
+          <a
+            class="btn btn--primary btn--wa btn--lg"
+            href="https://wa.me/385955739367"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Kontaktirajte nas putem WhatsAppa"
+          >
+            <svg class="btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" fill="currentColor"/></svg>
+            WhatsApp
+          </a>
+
+          <a
+            class="btn btn--secondary btn--phone"
+            href="tel:+385955739367"
+            aria-label="Pozovite nas na +385 95 5739 367"
+          >
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.03 6.03l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span data-i18n="contact.call">Pozovite</span>
+          </a>
+        </div>
+
+        <a
+          class="contact__email"
+          href="mailto:ante.bozikovic@gmail.com"
+          data-i18n="contact.email_label"
+        >E-mail upit</a>
+
+        <div class="contact__info reveal">
+          <p><strong data-i18n="contact.hosts">Domaćini:</strong> Ante i Irena Božiković</p>
+          <p>
+            <span data-i18n="contact.checkin">Check-in od 14:00</span>
+            &nbsp;·&nbsp;
+            <span data-i18n="contact.checkout">check-out do 10:00</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="/images/logo.png" alt="Apartmani Božiković" class="footer__logo" />
+      <p class="footer__address">Sv. Martin 94, 21312 Podstrana, Hrvatska</p>
+      <p class="footer__copy">&copy; <span id="year"></span> Apartmani Božiković</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galerija fotografija" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Zatvori galeriju">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <button class="lightbox__prev" id="lightboxPrev" aria-label="Prethodna fotografija">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <div class="lightbox__content" id="lightboxContent"></div>
+    <button class="lightbox__next" id="lightboxNext" aria-label="Sljedeća fotografija">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

@@ -3,6 +3,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Mobile browsers fire a resize event when the address bar hides/shows on
+// scroll (roughly 1-2s after load), which would otherwise make ScrollTrigger
+// re-measure everything and can look like reveals replaying.
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 export function initAnimations() {
   const revealEls = document.querySelectorAll('.reveal');
 

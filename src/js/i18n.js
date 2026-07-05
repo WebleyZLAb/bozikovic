@@ -1,3 +1,8 @@
+import hr from '../locales/hr.json';
+import en from '../locales/en.json';
+
+const LOCALES = { hr, en };
+
 const WA_NUMBER = '385955739367';
 
 const WA_MESSAGES = {
@@ -24,8 +29,7 @@ export async function initI18n() {
 }
 
 async function loadTranslations(lang) {
-  const res = await fetch(`/src/locales/${lang}.json`);
-  return res.json();
+  return LOCALES[lang] || LOCALES.hr;
 }
 
 export async function setLang(lang, save = true) {

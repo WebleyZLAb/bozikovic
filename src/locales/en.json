@@ -53,24 +53,8 @@
     "inquiry_a4": "Hello!%20I'm%20interested%20in%20Apartment%20A4%2B2%20(up%20to%206%20persons).%20Is%20it%20available%20for%3A%20..."
   },
   "reviews": {
-    "title": "Guests come back",
-    "reviews": "reviews",
-    "r1": {
-      "text": "\"A perfect family holiday. The beach is literally at the door, the kids were thrilled. The apartment is clean, well-equipped and has everything you need. We'll definitely be back!\"",
-      "author": "— Maja K., Sarajevo"
-    },
-    "r2": {
-      "text": "\"Right on the sea, peaceful setting, very friendly hosts. The terrace with sea view was a pleasure every evening. Highly recommended!\"",
-      "author": "— Thomas B., Munich"
-    },
-    "r3": {
-      "text": "\"A wonderful place right by the beach. Large, clean apartment with a beautiful sea view. Ante and Irena are wonderful hosts, always helpful.\"",
-      "author": "— Katarzyna W., Kraków"
-    },
-    "r4": {
-      "text": "\"The location is unbeatable — the sea literally within reach. The hosts are kind and always available. This is a place we'll recommend to all our friends.\"",
-      "author": "— Nikola P., Belgrade"
-    }
+    "title": "What our guests think",
+    "reviews": "reviews"
   },
   "location": {
     "title": "Location",
@@ -85,7 +69,6 @@
     "title": "Book your stay",
     "subtitle": "Contact us directly and arrange your stay without middlemen.",
     "call": "Call us",
-    "email_label": "Email inquiry",
     "hosts": "Hosts:",
     "checkin": "Check-in from 14:00",
     "checkout": "check-out by 10:00"

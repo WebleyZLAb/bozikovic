@@ -1,0 +1,86 @@
+export const testimonials = [
+  {
+    name: 'Petra',
+    location: 'Lhota u Příbramě, Češka Republika',
+    apartment: 'A4+2',
+    text: 'Prekrasan i prostran smještaj. Gospođa Irena je vrlo ljubazna i pažljiva. Prekrasan pogled na more. Za mene, odlično.',
+  },
+  {
+    name: 'Aleksej',
+    location: 'Derventa, Bosna i Hercegovina',
+    apartment: 'Studio',
+    text: 'Bili smo oduševljeni boravkom u ovom apartmanu! Sve je bilo savršeno – apartman je izuzetno čist, lijepo uređen i ima sve što je potrebno za ugodan odmor. Lokacija je odlična, blizu mora i svega važnog. Ali ono što ovaj smještaj čini posebnim su vlasnici – to su ljudi s dušom. Pristupačni, srdačni, uvijek spremni pomoći i pružiti savjet, a opet nenametljivi. Osjećali smo se kao kod kuće. Hvala od srca na gostoprimstvu i toplini koju ste nam pružili. Svakako se vraćamo!',
+  },
+  {
+    name: 'Nikica',
+    location: 'Prijedor, Bosna i Hercegovina',
+    apartment: 'A4+2',
+    text: 'Već 4 godine za redom boravimo ovdje i naravno opet se vraćamo i vraćat ćemo se dok god nas ovi divni domaćini budu prihvatili, bez ijedne zamjerke po pitanju svega, smještaja, parkinga, čistoće, ljubaznosti i susretljivosti, a bili smo smješteni u svim jedinicama. Ovaj smještaj pruža apsolutno sve što je jednoj porodici potrebno za savršen odmor!',
+  },
+  {
+    name: 'Edina',
+    location: 'Zenica, Bosna i Hercegovina',
+    apartment: 'A3',
+    text: 'Naš odmor je izgledao po prvi put onako kako smo zamišljali. Apartman je odmah ispred plaže, savršen ako imate djecu. Čistoća apartmana je na vrhunskom nivou, zahvaljujući gospođi Ireni koja to sa uživanjem radi. Ogromne pohvale za domaćine ali i gospodina Antu koji nas je dočekao sa osmjehom i kao da smo njegov rod, a tako isto su nas i ispratili. Zahvaljujući njima osjećali smo se kao kod kuće, bez ikakvog napora puni utisaka i odmorni, vratili smo se kući.',
+  },
+  {
+    name: 'Merima',
+    location: 'Mostar, Bosna i Hercegovina',
+    apartment: 'Studio',
+    text: 'Apartman je predivan. Gostima su na raspolaganju besplatne ležaljke. Sve pohvale za vlasnike Antu i Irenu, koji su toliko ljubazni i komunikativni. Oduševili su nas. More je samo par koraka od apartmana. Supermarket se nalazi par minuta hoda od apartmana. Naš boravak je bio savršen i sigurno ćemo se vratiti opet.',
+  },
+  {
+    name: 'Katarzyna',
+    location: 'Sosnowiec, Poljska',
+    apartment: 'Studio',
+    text: 'Mali studio savršen za 2 osobe po vrlo povoljnoj cijeni. Pogled na more iz kuhinje i terase prekrasan. Stabla tamarisa na plaži daju sjenu! Ne treba ti kišobran. Ležaljke za goste. Blizina trgovine gdje možete kupiti nešto za jelo. Bar i restoran/konoba nedaleko. Fantastični vlasnici — vrlo uslužni i ljubazni!!!',
+  },
+  {
+    name: 'Tamara',
+    location: 'Ljubljana, Slovenija',
+    apartment: 'Studio',
+    text: 'Objekt je na samoj plaži, apartman ima sve što vam treba, domaćini divni ljudi, dostupni ako vam zatrebaju, ukratko stvarno 10/10 sve. Hvala vam.',
+  },
+  {
+    name: 'Jusufovic',
+    location: 'Ödåkra, Švedska',
+    apartment: 'Studio',
+    text: 'Mogu da kažem samo 10 od 10 — lokacija, smještaj, prijem i najvažnije ljudskost domaćina, sve pohvale.',
+  },
+  {
+    name: 'Dz',
+    location: 'Podhale, Poljska',
+    apartment: 'Studio',
+    text: 'Odlična lokacija tik uz more. Prekrasni pogledi. Ležaljke i suncobrani na plaži. Stan ima sve što vam treba, uredno i čisto! Vlasnici su bili vrlo ljubazni i uslužni. Čiste savjesti preporučujem ovo mjesto. Sigurno ćemo se opet tamo vratiti.',
+  },
+  {
+    name: 'Ivona',
+    location: 'Đakovo, Hrvatska',
+    apartment: 'Studio',
+    text: 'Divni domaćini, najljubazniji koje smo do sada upoznali, a putovali smo puno. Ako nešto trebate, slobodno im se obratite i odmah vam daju, kažu ili pomognu. Čist, moderan i novije uređen apartman, doslovno na plaži, povoljna cijena. Ovaj apartman bio je pun pogodak da zaokružimo naš godišnji i sretni se vratimo kući.',
+  },
+  {
+    name: 'Radana',
+    location: 'Banja Luka, Bosna i Hercegovina',
+    apartment: 'A4+2',
+    text: 'Apartman je prelijep, nalazi se na samoj plaži. Idealno za odmor s djecom zato što nema šetanja do plaže. Kad god poželite možete izaći na kupanje. Blizu je prodavnica, apoteka, pedijatar. Sve pohvale domaćinima, Irena je predivna, ljubazna i uvijek je tu na usluzi ako bilo što zatreba. Iskreno preporučujem odmor na ovom mjestu, pravi raj.',
+  },
+  {
+    name: 'Dijana',
+    location: 'Banja Luka, Bosna i Hercegovina',
+    apartment: 'A4+2',
+    text: 'Kada upoznate divne ljude, domaćine, provedete odmor onako kako ste željeli, poželite da se vratite i sljedeće godine. Hvala na gostoprimstvu.',
+  },
+  {
+    name: 'Juraj',
+    location: 'Gáň, Slovačka',
+    apartment: 'Apartmani Božiković',
+    text: 'Super smještaj po povoljnoj cijeni. Imali smo cijeli kat za oba apartmana. U svakoj sobi klima, kuhinja opremljena, WiFi. Svugdje je čisto. Vidjeli smo djecu s terase, imali smo ležaljke i suncobrane koji su pripadali apartmanu, kao i komad plaže. Mi smo došli opustiti se na more i bilo je sjajno, hvala.',
+  },
+  {
+    name: 'Aluu',
+    location: 'Liberec, Češka Republika',
+    apartment: 'Apartmani Božiković',
+    text: 'Apsolutni raj, bili smo vrlo zadovoljni, vlasnik je ljubazan, nevjerojatan.',
+  },
+];

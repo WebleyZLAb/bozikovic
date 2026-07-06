@@ -14,6 +14,7 @@ export function initHeroVideo(lenisInstance) {
     done = true;
 
     hero.classList.remove('is-video-playing');
+    document.body.classList.remove('video-intro-active');
     wrap.classList.add('is-hidden');
     if (lenisInstance) lenisInstance.start();
 
@@ -26,6 +27,7 @@ export function initHeroVideo(lenisInstance) {
   }
 
   hero.classList.add('is-video-playing');
+  document.body.classList.add('video-intro-active');
   if (lenisInstance) lenisInstance.stop();
 
   video.addEventListener('ended', finish);
@@ -33,6 +35,7 @@ export function initHeroVideo(lenisInstance) {
   wrap.addEventListener('click', finish);
   wrap.addEventListener('touchend', finish);
 
+  video.playbackRate = 1.4;
   const playPromise = video.play();
   if (playPromise && typeof playPromise.catch === 'function') {
     playPromise.catch(finish);

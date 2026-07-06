@@ -1,12 +1,12 @@
 import Lenis from 'lenis';
 import L from 'leaflet';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initI18n } from './i18n.js';
 import { initHotspots } from './hotspots.js';
 import { initGallery } from './gallery.js';
 import { initAnimations } from './animations.js';
 import { initHeroVideo } from './hero-video.js';
+import { initTestimonials } from './testimonials.js';
 
 // ── Lenis smooth scroll ───────────────────────────────────────────────────
 const lenis = new Lenis({
@@ -15,10 +15,8 @@ const lenis = new Lenis({
   smooth: true,
 });
 
-// Keep ScrollTrigger in sync with Lenis's virtual scroll position, and drive
-// Lenis off GSAP's own ticker so both stay on the same animation frame.
-lenis.on('scroll', ScrollTrigger.update);
-
+// Drive Lenis off GSAP's own ticker so hotspot zoom tweens and scroll stay
+// on the same animation frame.
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
@@ -28,14 +26,28 @@ gsap.ticker.lagSmoothing(0);
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// ── Fixed logo: only show once the hero has been scrolled past ──────────────
+function initNavLogoVisibility() {
+  const logo = document.querySelector('.logo-fixed');
+  const hero = document.getElementById('hero');
+  if (!logo || !hero) return;
+
+  const update = () => {
+    logo.classList.toggle('is-visible', window.scrollY >= hero.offsetHeight - 1);
+  };
+
+  update();
+  lenis.on('scroll', update);
+}
+
 // ── Leaflet map ───────────────────────────────────────────────────────────
 function initMap() {
   const mapEl = document.getElementById('map');
   if (!mapEl) return;
 
-  // Koordinate: Sv. Martin 94, Podstrana (prilagoditi ako treba)
-  const LAT = 43.4835;
-  const LNG = 16.5478;
+  // Koordinate: Apartmani Božiković, Sv. Martin 94, Podstrana
+  const LAT = 43.476282321837324;
+  const LNG = 16.562676580399604;
 
   const map = L.map('map', {
     center: [LAT, LNG],
@@ -79,6 +91,8 @@ async function main() {
   initAnimations();
   initMap();
   initHeroVideo(lenis);
+  initTestimonials();
+  initNavLogoVisibility();
 }
 
 main();

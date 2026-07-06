@@ -53,24 +53,8 @@
     "inquiry_a4": "Pozdrav!%20Zanima%20me%20Apartman%20A4%2B2%20(do%206%20osoba).%20Mo%C5%BEete%20li%20mi%20re%C4%87i%20je%20li%20slobodan%20u%20terminu%3A%20..."
   },
   "reviews": {
-    "title": "Gosti se vraćaju",
-    "reviews": "recenzija",
-    "r1": {
-      "text": "\"Savršen odmor za obitelj. Plaža doslovno ispred vrata, djeca su bila oduševljena. Apartman je čist, uređen i ima sve što treba. Definitivno se vraćamo!\"",
-      "author": "— Maja K., Sarajevo"
-    },
-    "r2": {
-      "text": "\"Direkt am Meer, ruhige Lage, sehr freundliche Gastgeber. Die Terrasse mit Meerblick war jeden Abend ein Genuss. Sehr empfehlenswert!\"",
-      "author": "— Thomas B., München"
-    },
-    "r3": {
-      "text": "\"Wspaniałe miejsce tuż przy plaży. Apartament duży, czysty, z pięknym widokiem na morze. Ante i Irena to wspaniali gospodarze, zawsze pomocni.\"",
-      "author": "— Katarzyna W., Kraków"
-    },
-    "r4": {
-      "text": "\"Lokacija je nenadmašna — more doslovno na dohvat ruke. Domaćini su ljubazni i uvijek dostupni. Ovo je mjesto koje ćemo preporučiti svim prijateljima.\"",
-      "author": "— Nikola P., Beograd"
-    }
+    "title": "Što naši gosti misle",
+    "reviews": "recenzija"
   },
   "location": {
     "title": "Lokacija",
@@ -85,7 +69,6 @@
     "title": "Rezervirajte svoj boravak",
     "subtitle": "Kontaktirajte nas direktno i dogovorite uvjete bez posrednika.",
     "call": "Pozovite",
-    "email_label": "E-mail upit",
     "hosts": "Domaćini:",
     "checkin": "Check-in od 14:00",
     "checkout": "check-out do 10:00"

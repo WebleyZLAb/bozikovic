@@ -1,26 +1,18 @@
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Mobile browsers fire a resize event when the address bar hides/shows on
-// scroll (roughly 1-2s after load), which would otherwise make ScrollTrigger
-// re-measure everything and can look like reveals replaying.
-ScrollTrigger.config({ ignoreMobileResize: true });
 
 export function initAnimations() {
   const revealEls = document.querySelectorAll('.reveal');
 
-  revealEls.forEach((el, i) => {
-    // Group siblings in same parent for stagger
-    const siblings = Array.from(el.parentElement.querySelectorAll('.reveal'));
-    const indexInGroup = siblings.indexOf(el);
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        observer.unobserve(el);
 
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 88%',
-      once: true,
-      onEnter: () => {
+        const siblings = Array.from(el.parentElement.querySelectorAll('.reveal'));
+        const indexInGroup = siblings.indexOf(el);
+
         gsap.to(el, {
           opacity: 1,
           y: 0,
@@ -30,11 +22,10 @@ export function initAnimations() {
           clearProps: 'opacity,transform',
           onComplete: () => el.classList.add('is-visible'),
         });
-      },
-    });
-  });
-}
+      });
+    },
+    { rootMargin: '0px 0px -12% 0px' }
+  );
 
-export function killAnimations() {
-  ScrollTrigger.getAll().forEach(t => t.kill());
+  revealEls.forEach(el => observer.observe(el));
 }

@@ -11,8 +11,8 @@ export const HOTSPOT_CONFIG = {
   a4: {
     id: 'hotspot-a4',
     target: '#apartman-a4',
-    left: '68%',
-    top: '30%',
+    left: '56%',
+    top: '35%',
   },
   a3: {
     id: 'hotspot-a3',
@@ -23,6 +23,8 @@ export const HOTSPOT_CONFIG = {
 };
 
 const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
+
+let isNavigating = false;
 
 export function initHotspots(lenisInstance) {
   const wrap = document.getElementById('heroImageWrap');
@@ -42,6 +44,8 @@ export function initHotspots(lenisInstance) {
 }
 
 function handleHotspotClick(hotspot, targetSelector, wrap, lenisInstance) {
+  if (isNavigating) return;
+
   const targetEl = document.querySelector(targetSelector);
   if (!targetEl) return;
 
@@ -49,6 +53,8 @@ function handleHotspotClick(hotspot, targetSelector, wrap, lenisInstance) {
     scrollToTarget(targetEl, lenisInstance);
     return;
   }
+
+  isNavigating = true;
 
   // Desktop: zoom animation toward the hotspot, then scroll, then reset
   const hotspotLeft = parseFloat(hotspot.style.left) / 100;
@@ -65,7 +71,13 @@ function handleHotspotClick(hotspot, targetSelector, wrap, lenisInstance) {
       ease: 'power2.out',
       onComplete: () => {
         scrollToTarget(targetEl, lenisInstance);
-        gsap.to(wrap, { scale: 1, duration: 0.6, ease: 'power2.inOut', delay: 0.3 });
+        gsap.to(wrap, {
+          scale: 1,
+          duration: 0.6,
+          ease: 'power2.inOut',
+          delay: 0.3,
+          onComplete: () => { isNavigating = false; },
+        });
       }
     });
 }

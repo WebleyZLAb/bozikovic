@@ -34,6 +34,16 @@ export function initHeroVideo(lenisInstance) {
   document.body.classList.add('video-intro-active');
   if (lenisInstance) lenisInstance.stop();
 
+  // Pick the source in JS instead of <source media="">: iOS WebKit (both
+  // Safari and Chrome run the same engine there) has been unreliable about
+  // honoring the media query on <video><source>, silently falling back to
+  // the desktop file on phones. Reading matchMedia ourselves is unambiguous.
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  video.src = isMobile
+    ? '/hero-video/hero-video-mobile.mp4'
+    : '/hero-video/hero-video-desktop.mp4';
+  video.load();
+
   video.addEventListener('ended', finish);
   video.addEventListener('error', finish);
   wrap.addEventListener('click', finish);

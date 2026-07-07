@@ -362,11 +362,11 @@ body.video-intro-active .lang-toggle {
   /* Mobile intro video is 9:16 (CapCut), wider than most phone screens, so
      object-fit: cover crops the sides to fill the full height — reads as
      "zoomed in". Instead fill the width edge-to-edge (no side crop) and
-     anchor to the bottom (sea) — any shortfall lands as background above
-     the video (sky), which the video-wrap's dark background covers. */
+     anchor to the top (sky) so the video lines up flush with the top of
+     the viewport; any shortfall lands as background below (sea/bottom). */
   .hero__video-wrap {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .hero__video {

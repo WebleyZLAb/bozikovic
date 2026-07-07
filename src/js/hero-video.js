@@ -42,6 +42,10 @@ export function initHeroVideo(lenisInstance) {
   video.src = isMobile
     ? '/hero-video/hero-video-mobile.mp4'
     : '/hero-video/hero-video-desktop.mp4';
+  // The desktop poster photo doesn't match the mobile video's framing, so on
+  // mobile drop it — the sand background + centered logo (CSS) shows
+  // instead while the video buffers.
+  if (isMobile) video.removeAttribute('poster');
   video.load();
 
   video.addEventListener('ended', finish);

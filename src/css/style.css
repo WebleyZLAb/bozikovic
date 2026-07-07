@@ -312,6 +312,10 @@ body.video-intro-active .lang-toggle {
   cursor: pointer;
 }
 
+.hero__video-loading-logo {
+  display: none;
+}
+
 .hero.is-video-playing .hotspot,
 .hero.is-video-playing .hero__content,
 .hero.is-video-playing .hero__scroll-indicator {
@@ -367,11 +371,26 @@ body.video-intro-active .lang-toggle {
   .hero__video-wrap {
     display: flex;
     align-items: flex-start;
+    background: var(--sand);
   }
 
   .hero__video {
     height: auto;
     object-fit: unset;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Mobile has no poster (see hero-video.js) — while the video buffers,
+     show the brand mark instead of a blank/flashing frame. */
+  .hero__video-loading-logo {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(180px, 55vw, 300px);
+    z-index: 0;
   }
 }
 

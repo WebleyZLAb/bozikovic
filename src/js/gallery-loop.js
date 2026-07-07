@@ -208,7 +208,14 @@ export function horizontalLoop(items, config) {
           gsap.set(proxy, { x: 0 });
           wasPlaying && timeline.play();
         },
-        onThrowComplete: () => timeline.play(),
+        onThrowComplete: () => {
+          // Sync bookkeeping to the tile the swipe actually landed on, and
+          // only resume autoplay if this loop was auto-playing before the
+          // drag — otherwise a swipe on a paused (peek) carousel would keep
+          // drifting forward on its own after release.
+          timeline.closestIndex(true);
+          wasPlaying && timeline.play();
+        },
       })[0];
       timeline.draggable = draggable;
     }

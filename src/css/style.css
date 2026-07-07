@@ -609,6 +609,7 @@ body.video-intro-active .lang-toggle {
 
 @media (max-width: 767px) {
   .features {
+    padding-block: 1.75rem;
     overflow: hidden;
   }
 
@@ -617,13 +618,39 @@ body.video-intro-active .lang-toggle {
     flex-wrap: nowrap;
     justify-content: flex-start;
     width: max-content;
-    gap: 1.75rem;
+    gap: 2.25rem;
     animation: features-marquee 16s linear infinite;
   }
 
   .features__item {
     flex: 0 0 auto;
     min-width: 92px;
+    position: relative;
+  }
+
+  .features__item:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: -1.125rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    /* Half the height of the whole strip (.features padding-block 1.75rem
+       + item content), so the gap above the line to the strip's top edge
+       equals the gap below it to the bottom edge. */
+    height: 4.75rem;
+    background: var(--terracotta);
+    opacity: 0.35;
+  }
+
+  .features__icon svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .features__icon--lounger svg {
+    width: 58px;
+    height: 58px;
   }
 }
 
@@ -632,7 +659,7 @@ body.video-intro-active .lang-toggle {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - 0.875rem));
+    transform: translateX(calc(-50% - 1.125rem));
   }
 }
 
